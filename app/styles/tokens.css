@@ -1,0 +1,236 @@
+/*
+ * Design tokens
+ *
+ * Keep source values here. Tailwind utilities are exposed below through
+ * `@theme inline`, for example: bg-page, text-primary, and font-sans.
+ */
+
+:root {
+  /* Color */
+  --gray-light-default: #ffffff;
+  --gray-light-50: #f9fafb;
+  --gray-light-100: #f3f4f6;
+  --gray-light-200: #e5e7eb;
+  --gray-light-300: #d1d5db;
+  --gray-light-400: #9ca3af;
+  --gray-light-500: #6b7280;
+  --gray-light-600: #4b5563;
+  --gray-light-700: #374151;
+  --gray-light-800: #1f2937;
+  --gray-light-900: #111827;
+  --gray-light-950: #030712;
+
+  --gray-dark-default: #030712;
+  --gray-dark-50: #111827;
+  --gray-dark-100: #1f2937;
+  --gray-dark-200: #374151;
+  --gray-dark-300: #4b5563;
+  --gray-dark-400: #6b7280;
+  --gray-dark-500: #9ca3af;
+  --gray-dark-600: #d1d5db;
+  --gray-dark-700: #e5e7eb;
+  --gray-dark-800: #f3f4f6;
+  --gray-dark-900: #f9fafb;
+  --gray-dark-950: #ffffff;
+
+  --emerald-500: #10b981;
+
+  /* Semantic light theme */
+  --surface-page: var(--gray-light-default);
+  --surface-raised: var(--gray-light-default);
+  --surface-muted: var(--gray-light-50);
+  --surface-inverse: var(--gray-light-900);
+  --text-primary: var(--gray-light-900);
+  --text-secondary: var(--gray-light-500);
+  --text-inverse: var(--gray-light-default);
+  --border-subtle: var(--gray-light-200);
+  --accent-primary: var(--emerald-500);
+  --accent-soft: rgb(16 185 129 / 0.12);
+
+  /* Typography — < 768px */
+  --type-h1-size: 32px;
+  --type-h1-line-height: 40px;
+  --type-h1-weight: 600;
+  --type-h1-tracking: 0;
+  --type-h2-size: 28px;
+  --type-h2-line-height: 28px;
+  --type-h2-weight: 600;
+  --type-h2-tracking: -0.56px;
+  --type-h3-size: 24px;
+  --type-h3-line-height: 32px;
+  --type-h3-weight: 600;
+  --type-h3-tracking: -0.48px;
+  --type-subtitle-size: 18px;
+  --type-subtitle-line-height: 28px;
+  --type-subtitle-weight: 400;
+  --type-body-size: 16px;
+  --type-body-line-height: 24px;
+  --type-body-weight: 400;
+  --type-small-size: 14px;
+  --type-small-line-height: 20px;
+  --type-small-weight: 400;
+  --font-sans-stack: var(--font-inter), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue";
+  --font-mono-stack: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  /* Layout */
+  --content-max-width: 1440px;
+  --content-padding-inline: 16px;
+  --section-padding-block: 64px;
+
+  /* Shadows */
+  --elevation-md: 0 4px 3px rgb(0 0 0 / 0.07),
+    0 2px 2px rgb(0 0 0 / 0.06);
+  --elevation-lg: 0 4px 3px rgb(0 0 0 / 0.1),
+    0 10px 8px rgb(0 0 0 / 0.04);
+  --elevation-2xl: 0 25px 25px rgb(0 0 0 / 0.15);
+}
+
+:root[data-theme="dark"] {
+  --surface-page: var(--gray-dark-default);
+  --surface-raised: var(--gray-dark-50);
+  --surface-muted: var(--gray-dark-100);
+  --surface-inverse: var(--gray-dark-950);
+  --text-primary: var(--gray-dark-950);
+  --text-secondary: var(--gray-dark-500);
+  --text-inverse: var(--gray-dark-default);
+  --border-subtle: var(--gray-dark-200);
+}
+
+/* tablet values (768px–1023px). */
+@media (min-width: 768px) {
+  :root {
+    --type-h1-size: 48px;
+    --type-h1-line-height: 48px;
+    --type-h1-weight: 700;
+    --type-h1-tracking: -0.96px;
+  }
+}
+
+/* desktop values (1024px and above). */
+@media (min-width: 1024px) {
+  :root {
+    --type-h1-size: 60px;
+    --type-h1-line-height: 72px;
+    --type-h1-weight: 700;
+    --type-h1-tracking: -1.2px;
+    --type-h2-size: 36px;
+    --type-h2-line-height: 40px;
+    --type-h2-tracking: -0.72px;
+    --type-h3-size: 32px;
+    --type-h3-line-height: 36px;
+    --type-h3-tracking: -0.64px;
+    --type-subtitle-size: 20px;
+    --type-body-size: 18px;
+    --type-body-line-height: 28px;
+    --content-padding-inline: 80px;
+    --section-padding-block: 96px;
+  }
+}
+
+@theme inline {
+  --color-page: var(--surface-page);
+  --color-raised: var(--surface-raised);
+  --color-muted: var(--surface-muted);
+  --color-inverse: var(--surface-inverse);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-on-inverse: var(--text-inverse);
+  --color-border: var(--border-subtle);
+  --color-accent: var(--accent-primary);
+  --color-accent-soft: var(--accent-soft);
+
+  --font-sans: var(--font-sans-stack), sans-serif;
+  --font-mono: var(--font-mono-stack);
+
+  --text-display: var(--type-h1-size);
+  --text-display--line-height: var(--type-h1-line-height);
+  --text-display--letter-spacing: var(--type-h1-tracking);
+  --text-section: var(--type-h2-size);
+  --text-section--line-height: var(--type-h2-line-height);
+  --text-section--letter-spacing: var(--type-h2-tracking);
+  --text-card: var(--type-h3-size);
+  --text-card--line-height: var(--type-h3-line-height);
+  --text-card--letter-spacing: var(--type-h3-tracking);
+  --text-subtitle: var(--type-subtitle-size);
+  --text-subtitle--line-height: var(--type-subtitle-line-height);
+  --text-body: var(--type-body-size);
+  --text-body--line-height: var(--type-body-line-height);
+  --text-small: var(--type-small-size);
+  --text-small--line-height: var(--type-small-line-height);
+
+  --shadow-md: var(--elevation-md);
+  --shadow-lg: var(--elevation-lg);
+  --shadow-2xl: var(--elevation-2xl);
+}
+
+/* Text styles. Responsive values are supplied by the tokens above. */
+@utility type-h1 {
+  font-size: var(--type-h1-size);
+  font-weight: var(--type-h1-weight);
+  letter-spacing: var(--type-h1-tracking);
+  line-height: var(--type-h1-line-height);
+}
+
+@utility type-h2 {
+  font-size: var(--type-h2-size);
+  font-weight: var(--type-h2-weight);
+  letter-spacing: var(--type-h2-tracking);
+  line-height: var(--type-h2-line-height);
+}
+
+@utility type-h3 {
+  font-size: var(--type-h3-size);
+  font-weight: var(--type-h3-weight);
+  letter-spacing: var(--type-h3-tracking);
+  line-height: var(--type-h3-line-height);
+}
+
+@utility type-h3-bold {
+  font-weight: 700;
+}
+
+@utility type-subtitle {
+  font-size: var(--type-subtitle-size);
+  font-weight: var(--type-subtitle-weight);
+  line-height: var(--type-subtitle-line-height);
+}
+
+@utility type-subtitle-semibold {
+  font-weight: 600;
+}
+
+@utility type-body-1 {
+  font-size: var(--type-body-size);
+  font-weight: var(--type-body-weight);
+  line-height: var(--type-body-line-height);
+}
+
+@utility type-body-2 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@utility type-body-2-medium {
+  font-weight: 500;
+}
+
+@utility type-body-2-semibold {
+  font-weight: 600;
+}
+
+@utility type-body-2-underline {
+  text-decoration: underline;
+}
+
+@utility type-body-3 {
+  font-size: var(--type-small-size);
+  font-weight: var(--type-small-weight);
+  line-height: var(--type-small-line-height);
+}
+
+@utility type-body-3-medium {
+  font-weight: 500;
+}
