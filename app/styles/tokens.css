@@ -48,6 +48,7 @@
   --accent-soft: rgb(16 185 129 / 0.12);
   --button-cv-background: var(--gray-light-900);
   --button-cv-foreground: var(--gray-dark-900);
+  --bg-section: var(--gray-light-50);
 
   /* Typography — < 768px */
   --type-h1-size: 32px;
@@ -101,6 +102,7 @@
   --border-subtle: var(--gray-dark-200);
   --button-cv-background: var(--gray-dark-900);
   --button-cv-foreground: var(--gray-light-900);
+  --bg-section: var(--gray-dark-50);
 }
 
 /* tablet values (768px–1023px). */
@@ -138,6 +140,7 @@
   --color-page: var(--surface-page);
   --color-raised: var(--surface-raised);
   --color-muted: var(--surface-muted);
+  --color-section: var(--bg-section);
   --color-inverse: var(--surface-inverse);
   --color-primary: var(--text-primary);
   --color-secondary: var(--text-secondary);
