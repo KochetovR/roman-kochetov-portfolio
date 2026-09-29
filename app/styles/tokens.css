@@ -38,14 +38,16 @@
   /* Semantic light theme */
   --surface-page: var(--gray-light-default);
   --surface-raised: var(--gray-light-default);
-  --surface-muted: var(--gray-light-50);
+  --surface-muted: var(--gray-light-200);
   --surface-inverse: var(--gray-light-900);
   --text-primary: var(--gray-light-900);
-  --text-secondary: var(--gray-light-500);
+  --text-secondary: var(--gray-light-600);
   --text-inverse: var(--gray-light-default);
   --border-subtle: var(--gray-light-200);
   --accent-primary: var(--emerald-500);
   --accent-soft: rgb(16 185 129 / 0.12);
+  --button-cv-background: var(--gray-light-900);
+  --button-cv-foreground: var(--gray-dark-900);
 
   /* Typography — < 768px */
   --type-h1-size: 32px;
@@ -88,14 +90,17 @@
 }
 
 :root[data-theme="dark"] {
+  color-scheme: dark;
   --surface-page: var(--gray-dark-default);
   --surface-raised: var(--gray-dark-50);
-  --surface-muted: var(--gray-dark-100);
+  --surface-muted: var(--gray-dark-200);
   --surface-inverse: var(--gray-dark-950);
-  --text-primary: var(--gray-dark-950);
-  --text-secondary: var(--gray-dark-500);
+  --text-primary: var(--gray-dark-900);
+  --text-secondary: var(--gray-dark-600);
   --text-inverse: var(--gray-dark-default);
   --border-subtle: var(--gray-dark-200);
+  --button-cv-background: var(--gray-dark-900);
+  --button-cv-foreground: var(--gray-light-900);
 }
 
 /* tablet values (768px–1023px). */
@@ -140,6 +145,8 @@
   --color-border: var(--border-subtle);
   --color-accent: var(--accent-primary);
   --color-accent-soft: var(--accent-soft);
+  --color-cv-button: var(--button-cv-background);
+  --color-on-cv-button: var(--button-cv-foreground);
 
   --font-sans: var(--font-sans-stack), sans-serif;
   --font-mono: var(--font-mono-stack);
