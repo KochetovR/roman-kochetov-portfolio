@@ -22,3 +22,17 @@ body {
   outline: 2px solid var(--accent-primary);
   outline-offset: 3px;
 }
+
+/* External SVG files do not inherit text color, so their monochrome marks need
+ * a filter to remain visible when the site's theme changes. */
+:root[data-theme="dark"] .skill-icon-invert-dark {
+  filter: brightness(0) invert(1);
+}
+
+.skill-icon-invert-light {
+  filter: brightness(0);
+}
+
+:root[data-theme="dark"] .skill-icon-invert-light {
+  filter: none;
+}
