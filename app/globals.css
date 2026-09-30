@@ -36,3 +36,15 @@ body {
 :root[data-theme="dark"] .skill-icon-invert-light {
   filter: none;
 }
+
+.experience-logo-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .experience-logo-light-paired {
+  display: none;
+}
+
+:root[data-theme="dark"] .experience-logo-dark {
+  display: block;
+}

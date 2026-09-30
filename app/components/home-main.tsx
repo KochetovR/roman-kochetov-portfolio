@@ -1,4 +1,5 @@
 import { AboutSection } from "./about-section";
+import { ExperienceSection } from "./experience-section";
 import { HeroSection } from "./hero-section";
 import { SkillsSection } from "./skills-section";
 
@@ -8,6 +9,7 @@ export function HomeMain() {
       <HeroSection />
       <AboutSection />
       <SkillsSection />
+      <ExperienceSection />
     </main>
   );
 }
