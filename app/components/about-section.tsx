@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { LayeredPortrait } from "./layered-portrait";
 
 export function AboutSection() {
@@ -12,22 +13,29 @@ export function AboutSection() {
           About me
         </div>
 
-        <div className="mt-8 grid items-center gap-12 lg:grid-cols-[440px_minmax(0,1fr)] lg:gap-x-24">
-          <LayeredPortrait
-            ariaLabel="Portrait placeholder for Roman Kochetov"
-            backdropClassName="bottom-0 left-0 h-[360px] w-[320px] border-section bg-muted lg:h-[480px] lg:w-[400px]"
-            containerClassName="h-[380px] w-[320px] lg:mx-0 lg:h-[520px] lg:w-[440px]"
-            portraitClassName="top-0 left-1/2 h-[360px] w-[280px] -translate-x-1/2 border-section bg-raised text-5xl font-semibold tracking-[-0.08em] text-primary lg:left-auto lg:right-0 lg:h-[480px] lg:w-[400px] lg:translate-x-0 lg:text-7xl"
-          >
-            RK
-          </LayeredPortrait>
+        <div className="mt-8 flow-root">
+          <div className="mb-12 md:float-left md:mb-6 md:mr-12 lg:mr-24">
+            <LayeredPortrait
+              backdropClassName="bottom-0 left-0 h-[376px] w-[296px] border-section bg-muted md:h-[484px] md:w-[328px]"
+              containerClassName="h-[396px] w-[296px] md:mx-0 md:h-[524px] md:w-[368px]"
+              portraitClassName="top-0 left-1/2 h-[376px] w-[256px] -translate-x-1/2 border-section bg-raised md:left-auto md:right-0 md:h-[484px] md:w-[328px] md:translate-x-0"
+            >
+              <Image
+                alt="Portrait of Roman Kochetov"
+                className="object-cover"
+                fill
+                sizes="(max-width: 767px) 240px, 312px"
+                src="/assets/img/about-me.webp"
+              />
+            </LayeredPortrait>
+          </div>
 
-          <div className="max-w-2xl">
+          <div>
             <h2 className="type-h3 text-primary" id="about-title">
               Curious about me? Here you have it:
             </h2>
 
-            <div className="type-body-2 mt-6 space-y-4 text-secondary lg:type-body-1">
+            <div className="type-body-2 mt-6 space-y-4 text-secondary md:type-body-1">
               <p>
                 I&apos;m a Front-end Developer with 5 years of commercial experience building and maintaining responsive web applications with Vue.js, Nuxt, React, Next.js, JavaScript, and TypeScript.
               </p>

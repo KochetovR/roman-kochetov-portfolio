@@ -39,7 +39,7 @@ export function SiteHeader() {
           <a
             className="type-body-3 cursor-pointer rounded-xl bg-cv-button px-4 py-2 font-semibold text-on-cv-button transition-opacity hover:opacity-80"
             download
-            href="/roman-kochetov-cv.pdf"
+            href="/assets/roman-kochetov-cv.pdf"
           >
             Download CV
           </a>

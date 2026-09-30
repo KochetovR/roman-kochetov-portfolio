@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { LayeredPortrait } from "./layered-portrait";
 
 const socialLinks = [
@@ -23,12 +24,18 @@ export function HeroSection() {
         </div>
         <div className="order-1 md:order-2">
           <LayeredPortrait
-            ariaLabel="Portrait placeholder for Roman Kochetov"
             backdropClassName="bottom-0 right-0 h-[280px] w-[280px] border-page bg-muted md:h-[320px] md:w-[280px]"
             containerClassName="h-[300px] w-[280px] md:mx-0 md:h-[360px] md:w-[320px]"
-            portraitClassName="top-0 left-1/2 h-[280px] w-[240px] -translate-x-1/2 border-page bg-raised text-4xl font-semibold tracking-[-0.08em] text-primary md:relative md:left-auto md:h-[320px] md:w-[280px] md:translate-x-0 md:text-5xl"
+            portraitClassName="top-0 left-1/2 h-[280px] w-[240px] -translate-x-1/2 border-page bg-raised md:relative md:left-auto md:h-[320px] md:w-[280px] md:translate-x-0"
           >
-            RK
+            <Image
+              alt="Portrait of Roman Kochetov"
+              className="object-cover"
+              fill
+              preload
+              sizes="(max-width: 767px) 240px, 280px"
+              src="/assets/img/hero.webp"
+            />
           </LayeredPortrait>
         </div>
       </div>

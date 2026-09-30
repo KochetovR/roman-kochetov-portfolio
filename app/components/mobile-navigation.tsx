@@ -96,7 +96,7 @@ export function MobileNavigation() {
                 <a
                   className="type-body-3 block w-full rounded-xl bg-cv-button px-4 py-2 text-center font-semibold text-on-cv-button transition-opacity hover:opacity-80"
                   download
-                  href="/roman-kochetov-cv.pdf"
+                  href="/assets/roman-kochetov-cv.pdf"
                 >
                   Download CV
                 </a>

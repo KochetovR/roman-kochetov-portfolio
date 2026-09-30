@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 type LayeredPortraitProps = {
-  ariaLabel: string;
   backdropClassName: string;
   children: ReactNode;
   containerClassName: string;
@@ -9,23 +8,18 @@ type LayeredPortraitProps = {
 };
 
 export function LayeredPortrait({
-  ariaLabel,
   backdropClassName,
   children,
   containerClassName,
   portraitClassName,
 }: LayeredPortraitProps) {
   return (
-    <div
-      aria-label={ariaLabel}
-      className={`relative mx-auto ${containerClassName}`}
-      role="img"
-    >
-      <div className={`absolute border-[8px] ${backdropClassName}`} />
+    <div className={`relative mx-auto ${containerClassName}`}>
+      <div aria-hidden="true" className={`absolute border-[8px] ${backdropClassName}`} />
       <div
-        className={`absolute z-10 flex items-center justify-center border-[8px] ${portraitClassName}`}
+        className={`absolute z-10 overflow-hidden border-[8px] ${portraitClassName}`}
       >
-        {children}
+        <div className="relative h-full w-full">{children}</div>
       </div>
     </div>
   );
