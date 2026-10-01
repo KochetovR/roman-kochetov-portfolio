@@ -10,7 +10,7 @@ const navigation = [
 
 export function SiteHeader() {
   return (
-    <header className="bg-page px-[var(--content-padding-inline)] py-4">
+    <header className="bg-page px-[var(--content-padding-inline)] py-4 bg-section">
       <div className="mx-auto flex max-w-[var(--content-max-width)] items-center justify-between">
         <Link
           aria-label="Roman Kochetov — home"
