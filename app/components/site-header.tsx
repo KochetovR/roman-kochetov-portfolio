@@ -1,16 +1,10 @@
 import Link from "next/link";
-import { MobileNavigation } from "./mobile-navigation";
+import { NavigationTabs } from "./navigation-tabs";
 import { ThemeToggle } from "./theme-toggle";
-
-const navigation = [
-  { href: "/#about", label: "About" },
-  { href: "/#work", label: "Work" },
-  { href: "#contact", label: "Contact" },
-];
 
 export function SiteHeader() {
   return (
-    <header className="bg-page px-[var(--content-padding-inline)] py-4 bg-section">
+    <header className="mobile-site-header fixed left-0 top-0 z-40 w-screen bg-section px-[var(--content-padding-inline)] py-4">
       <div className="mx-auto flex max-w-[var(--content-max-width)] items-center justify-between">
         <Link
           aria-label="Roman Kochetov — home"
@@ -20,21 +14,8 @@ export function SiteHeader() {
           &lt;RK /&gt;
         </Link>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <nav aria-label="Main navigation">
-            <ul className="flex items-center gap-6">
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <Link
-                  className="type-body-2-medium text-secondary transition-colors hover:text-primary"
-                  href={item.href}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-            </ul>
-          </nav>
+        <div className="hidden items-center gap-3 min-[540px]:flex">
+          <NavigationTabs variant="header" />
           <ThemeToggle />
           <a
             className="type-body-3 cursor-pointer rounded-xl bg-cv-button px-4 py-2 font-semibold text-on-cv-button transition-opacity hover:opacity-80"
@@ -45,7 +26,16 @@ export function SiteHeader() {
           </a>
         </div>
 
-        <MobileNavigation />
+        <div className="flex items-center gap-2 min-[540px]:hidden">
+          <ThemeToggle />
+          <a
+            className="type-body-3 rounded-xl bg-cv-button px-3 py-2 font-semibold text-on-cv-button transition-opacity active:opacity-80"
+            download
+            href="/assets/roman-kochetov-cv.pdf"
+          >
+            Download CV
+          </a>
+        </div>
       </div>
     </header>
   );
