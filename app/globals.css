@@ -90,6 +90,43 @@ html[data-bottom-navigation-hidden] .mobile-bottom-navigation {
   transform: scaleX(1);
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .skill-trigger:hover .skill-tooltip,
+  .skill-trigger:focus-visible .skill-tooltip {
+    opacity: 1;
+  }
+
+  .skill-trigger {
+    cursor: default;
+  }
+}
+
+@media (max-width: 767px) {
+  .skill-item:nth-child(3n + 1) .skill-tooltip {
+    left: 0;
+    --tw-translate-x: 0px;
+  }
+
+  .skill-item:nth-child(3n) .skill-tooltip {
+    left: auto;
+    right: 0;
+    --tw-translate-x: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .skill-item:nth-child(6n + 1) .skill-tooltip {
+    left: 0;
+    --tw-translate-x: 0px;
+  }
+
+  .skill-item:nth-child(6n) .skill-tooltip {
+    left: auto;
+    right: 0;
+    --tw-translate-x: 0px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mobile-site-header,
   .mobile-bottom-navigation,
