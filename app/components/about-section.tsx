@@ -28,6 +28,7 @@ export function AboutSection({ locale }: { locale: Locale }) {
                 alt="Portrait of Roman Kochetov"
                 className="object-cover"
                 fill
+                loading="eager"
                 sizes="(max-width: 767px) 240px, 312px"
                 src="/assets/img/about-me.webp"
               />

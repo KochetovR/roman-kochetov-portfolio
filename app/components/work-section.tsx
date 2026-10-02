@@ -26,7 +26,7 @@ export function WorkSection({ locale }: { locale: Locale }) {
               className="group overflow-hidden rounded-2xl bg-card p-4 shadow-md transition-shadow duration-300 hover:shadow-lg md:grid md:grid-cols-2 md:items-center md:gap-10 md:p-6 lg:gap-14 lg:p-8"
               key={project.slug}
             >
-              <Link aria-label={text.readCaseStudy(project.title)} className={`relative aspect-[16/10] overflow-hidden rounded-xl bg-raised ${index % 2 === 1 ? "md:order-2" : ""}`} href={getLocalizedPathname(locale, `/work/${project.slug}`)}>
+              <Link aria-label={text.readCaseStudy(project.title)} className={`relative block aspect-[16/10] overflow-hidden rounded-xl bg-raised ${index % 2 === 1 ? "md:order-2" : ""}`} href={getLocalizedPathname(locale, `/work/${project.slug}`)}>
                 <Image
                   alt={project.image.alt}
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025]"

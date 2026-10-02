@@ -55,15 +55,15 @@ export function SkillsSection({ locale }: { locale: Locale }) {
         <ul className="mx-auto mt-10 grid max-w-6xl grid-cols-3 gap-x-4 gap-y-8 sm:gap-x-8 md:grid-cols-6 md:gap-y-10">
           {skills.map((skill) => (
             <li className="flex flex-col items-center gap-3" key={skill.icon}>
-              <div className="flex h-16 w-16 items-center justify-center">
+              <div className="relative h-16 w-16">
                 <Image
                   alt=""
-                  className={`max-h-16 max-w-16 object-contain ${skill.themeClass ?? ""}`}
+                  className={`object-contain ${skill.themeClass ?? ""}`}
                   decoding="async"
-                  height="64"
+                  fill
+                  sizes="64px"
                   src={`/assets/icons/${skill.icon}`}
                   unoptimized
-                  width="64"
                 />
               </div>
               <span className="type-body-2 text-center text-secondary">{skill.label}</span>
