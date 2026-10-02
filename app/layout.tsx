@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { MobileBottomNavigation } from "./components/mobile-bottom-navigation";
 import { MobileChromeVisibility } from "./components/mobile-chrome-visibility";
+import { ScrollToTopButton } from "./components/scroll-to-top-button";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 import "./globals.css";
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         <SiteFooter />
         <MobileBottomNavigation />
+        <ScrollToTopButton />
       </body>
     </html>
   );
