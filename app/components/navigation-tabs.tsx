@@ -12,6 +12,7 @@ type NavigationTabVariant = "bottom" | "header";
 type ActiveNavigationTab = NavigationTabId | null;
 
 const NAVIGATION_SETTLE_DELAY = 180;
+const SCROLL_START_THRESHOLD = 1;
 
 function isHomePathname(pathname: string) {
   return /^\/(?:uk|ru)?$/.test(pathname);
@@ -26,7 +27,7 @@ export function NavigationTabs({ variant }: { variant: NavigationTabVariant }) {
     { href: `${getLocalizedPathname(locale, "/")}#work`, id: "work" as const, label: text.work },
     { href: "#contact", id: "contact" as const, label: text.contact },
   ], [locale, text]);
-  const [activeTab, setActiveTab] = useState<ActiveNavigationTab>(isHomePathname(pathname) ? "about" : null);
+  const [activeTab, setActiveTab] = useState<ActiveNavigationTab>(null);
   const pendingTab = useRef<NavigationTabId | null>(null);
 
   useEffect(() => {
@@ -47,10 +48,31 @@ export function NavigationTabs({ variant }: { variant: NavigationTabVariant }) {
 
     let animationFrame: number | undefined;
     let pendingCompletionTimeout: number | undefined;
+    let isHashSynchronizationReady = false;
+
+    const replaceHash = (tab: ActiveNavigationTab) => {
+      if (!isHashSynchronizationReady) return;
+
+      const nextHash = window.scrollY <= SCROLL_START_THRESHOLD ? "" : `#${tab}`;
+
+      if (window.location.hash === nextHash) return;
+
+      window.history.replaceState(
+        window.history.state,
+        "",
+        `${window.location.pathname}${window.location.search}${nextHash}`,
+      );
+    };
 
     const updateActiveTab = () => {
       if (pendingTab.current) {
         setActiveTab(pendingTab.current);
+        return;
+      }
+
+      if (window.scrollY <= SCROLL_START_THRESHOLD) {
+        setActiveTab(null);
+        replaceHash(null);
         return;
       }
 
@@ -66,6 +88,7 @@ export function NavigationTabs({ variant }: { variant: NavigationTabVariant }) {
       }
 
       setActiveTab((currentTab) => (currentTab === nextActiveTab ? currentTab : nextActiveTab));
+      replaceHash(nextActiveTab);
     };
 
     const scheduleTabUpdate = () => {
@@ -105,6 +128,8 @@ export function NavigationTabs({ variant }: { variant: NavigationTabVariant }) {
       schedulePendingNavigationCompletion();
     };
 
+    selectHashTarget();
+    isHashSynchronizationReady = true;
     scheduleTabUpdate();
     schedulePendingNavigationCompletion();
     window.addEventListener("hashchange", selectHashTarget);
