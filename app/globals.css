@@ -101,6 +101,19 @@ html[data-bottom-navigation-hidden] .mobile-bottom-navigation {
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .section-reveal[data-reveal-state="hidden"] {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+
+  .section-reveal[data-reveal-state="visible"] {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+  }
+}
+
 @media (max-width: 767px) {
   .skill-item:nth-child(3n + 1) .skill-tooltip {
     left: 0;

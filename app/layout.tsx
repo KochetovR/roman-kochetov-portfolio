@@ -4,6 +4,7 @@ import { MobileBottomNavigation } from "./components/mobile-bottom-navigation";
 import { MobileChromeVisibility } from "./components/mobile-chrome-visibility";
 import { LocaleProvider } from "./components/locale-provider";
 import { ScrollToTopButton } from "./components/scroll-to-top-button";
+import { SectionReveal } from "./components/section-reveal";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 import "./globals.css";
@@ -32,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <MobileChromeVisibility />
           <SiteHeader />
           {children}
-          <SiteFooter />
+          <SectionReveal><SiteFooter /></SectionReveal>
           <MobileBottomNavigation />
           <ScrollToTopButton />
         </LocaleProvider>
