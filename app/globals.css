@@ -42,13 +42,13 @@ html:not([data-hash-navigation-ready]):has(:target) .hash-navigation-preloader {
   transform: translateX(0);
 }
 
-html[data-mobile-chrome-hidden] .mobile-site-header {
+html[data-header-hidden] .mobile-site-header {
   opacity: 0;
   pointer-events: none;
   transform: translateY(-100%);
 }
 
-html[data-mobile-chrome-hidden] .mobile-bottom-navigation {
+html[data-bottom-navigation-hidden] .mobile-bottom-navigation {
   opacity: 0;
   pointer-events: none;
   transform: translateY(100%);

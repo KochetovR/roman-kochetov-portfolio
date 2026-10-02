@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { getTranslation } from "../data/translations";
+import type { Locale } from "../lib/locale";
 
 const skills = [
   { icon: "js.svg", label: "JavaScript" },
@@ -33,7 +35,9 @@ const skills = [
   { icon: "flutter.svg", label: "Flutter" },
 ];
 
-export function SkillsSection() {
+export function SkillsSection({ locale }: { locale: Locale }) {
+  const text = getTranslation(locale).skills;
+
   return (
     <section
       aria-labelledby="skills-title"
@@ -42,10 +46,10 @@ export function SkillsSection() {
     >
       <div className="mx-auto max-w-[var(--content-max-width)]">
         <div className="mx-auto w-fit rounded-xl bg-muted px-3 py-1 type-body-3-medium text-secondary">
-          Skills
+          {text.eyebrow}
         </div>
         <h2 className="type-subtitle mx-auto mt-4 max-w-xl text-center text-primary" id="skills-title">
-          The skills, tools, and technologies I work with.
+          {text.title}
         </h2>
 
         <ul className="mx-auto mt-10 grid max-w-6xl grid-cols-3 gap-x-4 gap-y-8 sm:gap-x-8 md:grid-cols-6 md:gap-y-10">

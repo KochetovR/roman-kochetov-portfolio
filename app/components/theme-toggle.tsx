@@ -1,6 +1,8 @@
 "use client";
 
 import {useEffect, useSyncExternalStore} from "react";
+import { getTranslation } from "../data/translations";
+import { useLocale } from "./locale-provider";
 
 type Theme = "dark" | "light";
 
@@ -25,6 +27,8 @@ function subscribeToThemeChange(onStoreChange: () => void) {
 }
 
 export function ThemeToggle() {
+  const locale = useLocale();
+  const text = getTranslation(locale).theme;
   const theme = useSyncExternalStore(
     subscribeToThemeChange,
     getTheme,
@@ -41,13 +45,13 @@ export function ThemeToggle() {
 
   return (
     <button
-      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      aria-label={isDark ? text.switchToLight : text.switchToDark}
       aria-pressed={isDark}
       className="inline-flex items-center justify-center rounded-lg text-secondary transition-colors hover:bg-muted hover:text-primary cursor-pointer"
       onClick={() => setDocumentTheme(getTheme() === "dark" ? "light" : "dark")}
       type="button"
     >
-      <span className="sr-only">{isDark ? "Light theme" : "Dark theme"}</span>
+      <span className="sr-only">{isDark ? text.light : text.dark}</span>
       {isDark ? (
 
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">

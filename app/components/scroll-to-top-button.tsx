@@ -1,10 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { getTranslation } from "../data/translations";
+import { useLocale } from "./locale-provider";
 
 const SCROLL_THRESHOLD = 0.3;
 
 export function ScrollToTopButton() {
+  const locale = useLocale();
+  const label = getTranslation(locale).scrollToTop;
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -45,10 +49,10 @@ export function ScrollToTopButton() {
 
   return (
     <button
-      aria-label="Scroll to top"
+      aria-label={label}
       className={`scroll-to-top-button fixed right-4 z-30 inline-flex size-11 items-center justify-center rounded-full bg-cv-button text-on-cv-button shadow-lg min-[540px]:bottom-6 cursor-pointer ${isVisible ? "is-visible" : ""} bottom-[5.5rem]`}
       onClick={scrollToTop}
-      title="Scroll to top"
+      title={label}
       type="button"
     >
       <svg aria-hidden="true" className="size-5" fill="none" viewBox="0 0 24 24">

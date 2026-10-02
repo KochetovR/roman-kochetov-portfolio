@@ -1,4 +1,8 @@
+"use client";
+
+import { getTranslation } from "../data/translations";
 import { CopyButton } from "./copy-button";
+import { useLocale } from "./locale-provider";
 
 const socialLinks = [
   {
@@ -31,6 +35,10 @@ const socialLinks = [
 ];
 
 export function SiteFooter() {
+  const locale = useLocale();
+  const text = getTranslation(locale).footer;
+  const copy = getTranslation(locale).copy;
+
   return (
     <footer>
       <section
@@ -38,10 +46,10 @@ export function SiteFooter() {
         id="contact"
       >
         <span className="type-body-3 inline-flex rounded-xl bg-muted px-3 py-1 text-secondary type-body-2-medium">
-          Get in touch
+          {text.eyebrow}
         </span>
         <p className="type-subtitle mx-auto mt-4 max-w-[640px] text-secondary md:type-h3">
-          What&apos;s next? Feel free to reach out if you&apos;re looking for a developer, have a query, or simply want to connect.
+          {text.subtitle}
         </p>
 
         <div className="mt-8 space-y-3">
@@ -53,7 +61,7 @@ export function SiteFooter() {
             <a className="type-h3 text-primary hover:underline" href="mailto:k04erg0@gmail.com">
               k04erg0@gmail.com
             </a>
-            <CopyButton label="email address" value="k04erg0@gmail.com" />
+            <CopyButton label={copy.emailAddress} value="k04erg0@gmail.com" />
           </div>
 
           <div className="flex items-center justify-center gap-2">
@@ -63,12 +71,12 @@ export function SiteFooter() {
             <a className="type-h3 text-primary hover:underline" href="tel:+380663716961">
               +380 66 371 6961
             </a>
-            <CopyButton label="phone number" value="+380663716961" />
+            <CopyButton label={copy.phoneNumber} value="+380663716961" />
           </div>
         </div>
 
         <div className="mt-8">
-          <p className="type-body-2 text-secondary">You may also find me on these platforms!</p>
+          <p className="type-body-2 text-secondary">{text.social}</p>
           <ul className="mt-4 flex justify-center gap-4">
             {socialLinks.map((link) => (
               <li key={link.label}>
@@ -88,7 +96,7 @@ export function SiteFooter() {
       </section>
 
       <div className="px-[var(--content-padding-inline)] py-5 text-center ">
-        <p className="type-body-3 text-secondary">© 2026 Roman Kochetov. All rights reserved.</p>
+        <p className="type-body-3 text-secondary">{text.copyright}</p>
       </div>
     </footer>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { MobileBottomNavigation } from "./components/mobile-bottom-navigation";
 import { MobileChromeVisibility } from "./components/mobile-chrome-visibility";
+import { LocaleProvider } from "./components/locale-provider";
 import { ScrollToTopButton } from "./components/scroll-to-top-button";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
@@ -27,12 +28,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <MobileChromeVisibility />
-        <SiteHeader />
-        {children}
-        <SiteFooter />
-        <MobileBottomNavigation />
-        <ScrollToTopButton />
+        <LocaleProvider>
+          <MobileChromeVisibility />
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+          <MobileBottomNavigation />
+          <ScrollToTopButton />
+        </LocaleProvider>
       </body>
     </html>
   );

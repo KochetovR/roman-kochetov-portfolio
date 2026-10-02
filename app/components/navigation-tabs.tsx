@@ -2,27 +2,35 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { getTranslation } from "../data/translations";
+import { getLocalizedPathname } from "../lib/locale";
+import { useLocale } from "./locale-provider";
 
-const navigation = [
-  { href: "/#about", id: "about", label: "About" },
-  { href: "/#work", id: "work", label: "Work" },
-  { href: "#contact", id: "contact", label: "Contact" },
-] as const;
-
-type NavigationTabId = (typeof navigation)[number]["id"];
+type NavigationTabId = "about" | "work" | "contact";
 type NavigationTabVariant = "bottom" | "header";
 type ActiveNavigationTab = NavigationTabId | null;
 
 const NAVIGATION_SETTLE_DELAY = 180;
 
+function isHomePathname(pathname: string) {
+  return /^\/(?:uk|ru)?$/.test(pathname);
+}
+
 export function NavigationTabs({ variant }: { variant: NavigationTabVariant }) {
   const pathname = usePathname();
-  const [activeTab, setActiveTab] = useState<ActiveNavigationTab>(pathname.startsWith("/work/") ? null : "about");
+  const locale = useLocale();
+  const text = getTranslation(locale).navigation;
+  const navigation = useMemo(() => [
+    { href: `${getLocalizedPathname(locale, "/")}#about`, id: "about" as const, label: text.about },
+    { href: `${getLocalizedPathname(locale, "/")}#work`, id: "work" as const, label: text.work },
+    { href: "#contact", id: "contact" as const, label: text.contact },
+  ], [locale, text]);
+  const [activeTab, setActiveTab] = useState<ActiveNavigationTab>(isHomePathname(pathname) ? "about" : null);
   const pendingTab = useRef<NavigationTabId | null>(null);
 
   useEffect(() => {
-    if (pathname !== "/") {
+    if (!isHomePathname(pathname)) {
       const contactSection = document.getElementById("contact");
 
       if (!contactSection) return;
@@ -110,12 +118,12 @@ export function NavigationTabs({ variant }: { variant: NavigationTabVariant }) {
       window.removeEventListener("resize", scheduleTabUpdate);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [pathname]);
+  }, [navigation, pathname]);
 
   const isHeader = variant === "header";
 
   return (
-    <nav aria-label={isHeader ? "Main navigation" : "Mobile navigation"} className={isHeader ? "" : "mobile-bottom-navigation fixed bottom-0 left-0 z-40 w-screen border-t border-border bg-page px-[var(--content-padding-inline)] py-3 min-[540px]:hidden"}>
+    <nav aria-label={isHeader ? text.main : text.mobile} className={isHeader ? "" : "mobile-bottom-navigation fixed bottom-0 left-0 z-40 w-screen border-t border-border bg-page px-[var(--content-padding-inline)] py-3 min-[540px]:hidden"}>
       <ul className={isHeader ? "flex items-center gap-2" : "mx-auto grid max-w-[var(--content-max-width)] grid-cols-3 gap-2"}>
         {navigation.map((item) => {
           const isActive = activeTab === item.id;

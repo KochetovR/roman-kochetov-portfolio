@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { getTranslation } from "../data/translations";
+import { useLocale } from "./locale-provider";
 
 type CopyButtonProps = {
   label: string;
@@ -20,6 +22,8 @@ function copyWithLegacyApi(value: string) {
 }
 
 export function CopyButton({ label, value }: CopyButtonProps) {
+  const locale = useLocale();
+  const text = getTranslation(locale).copy;
   const [isCopied, setIsCopied] = useState(false);
 
   useEffect(() => {
@@ -40,10 +44,10 @@ export function CopyButton({ label, value }: CopyButtonProps) {
 
   return (
     <button
-      aria-label={`Copy ${label}`}
+      aria-label={`${text.copy} ${label}`}
       className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-secondary transition-colors hover:bg-muted hover:text-primary cursor-pointer"
       onClick={copyValue}
-      title={isCopied ? "Copied" : `Copy ${label}`}
+      title={isCopied ? text.copied : `${text.copy} ${label}`}
       type="button"
     >
       <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20">

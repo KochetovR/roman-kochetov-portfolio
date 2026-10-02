@@ -149,6 +149,18 @@ export const projects: Project[] = [
   },
 ];
 
-export function getProject(slug: string) {
-  return projects.find((project) => project.slug === slug);
+export function getProject(slug: string, locale: Locale = "en") {
+  const project = projects.find((item) => item.slug === slug);
+
+  if (!project || locale === "en") return project;
+
+  const translation = projectTranslations[locale][slug];
+
+  return translation ? { ...project, ...translation } : project;
 }
+
+export function getProjects(locale: Locale = "en") {
+  return projects.map((project) => getProject(project.slug, locale) ?? project);
+}
+import { projectTranslations } from "./project-translations";
+import type { Locale } from "../lib/locale";

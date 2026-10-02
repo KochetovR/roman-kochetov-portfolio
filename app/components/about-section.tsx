@@ -1,7 +1,11 @@
 import Image from "next/image";
+import { getTranslation } from "../data/translations";
+import type { Locale } from "../lib/locale";
 import { LayeredPortrait } from "./layered-portrait";
 
-export function AboutSection() {
+export function AboutSection({ locale }: { locale: Locale }) {
+  const text = getTranslation(locale).about;
+
   return (
     <section
       aria-labelledby="about-title"
@@ -10,7 +14,7 @@ export function AboutSection() {
     >
       <div className="mx-auto max-w-[var(--content-max-width)]">
         <div className="mx-auto w-fit rounded-xl bg-muted px-3 py-1 type-body-3-medium text-secondary">
-          About me
+          {text.eyebrow}
         </div>
 
         <div className="mt-8 flow-root">
@@ -32,22 +36,11 @@ export function AboutSection() {
 
           <div>
             <h2 className="type-h3 text-primary" id="about-title">
-              Curious about me? Here you have it:
+              {text.title}
             </h2>
 
             <div className="type-body-2 mt-6 space-y-4 text-secondary md:type-body-1">
-              <p>
-                I&apos;m a Front-end Developer with 5 years of commercial experience building and maintaining responsive web applications with Vue.js, Nuxt, React, Next.js, JavaScript, and TypeScript.
-              </p>
-              <p>
-                At Alma-Soft, I work on commercial products including iGaming applications, administration interfaces, company websites, and Web3-related platforms. My work spans REST APIs, Socket.IO real-time features, authentication, localization, SSR/PWA, and performance optimisation.
-              </p>
-              <p>
-                I&apos;ve helped migrate an iGaming application from Vue 2 to Vue 3 and then Nuxt 3. I also build React and Next.js applications with Redux Toolkit, React Query, and Tailwind CSS.
-              </p>
-              <p>
-                Earlier at Viseven, I developed Vue.js components for a medical presentation platform and tailored responsive interfaces for iPad. I focus on clean, maintainable code, reusable components, and close collaboration with designers, backend developers, and product teams.
-              </p>
+              {text.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
           </div>
         </div>
