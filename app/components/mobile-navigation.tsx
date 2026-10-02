@@ -7,7 +7,7 @@ import { ThemeToggle } from "./theme-toggle";
 const navigation = [
   { href: "/#about", label: "About" },
   { href: "/#work", label: "Work" },
-  { href: "/#contact", label: "Contact" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function MobileNavigation() {
