@@ -16,7 +16,7 @@ function setDocumentTheme(theme: Theme) {
 }
 
 function getTheme(): Theme {
-  if (typeof document === "undefined") return "light";
+  if (typeof document === "undefined") return "dark";
 
   return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
 }
@@ -32,12 +32,12 @@ export function ThemeToggle() {
   const theme = useSyncExternalStore(
     subscribeToThemeChange,
     getTheme,
-    () => "light",
+    () => "dark",
   );
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem(STORAGE_KEY);
-    document.documentElement.dataset.theme = storedTheme === "dark" ? "dark" : "light";
+    document.documentElement.dataset.theme = storedTheme === "light" ? "light" : "dark";
     window.dispatchEvent(new Event(THEME_CHANGE_EVENT));
   }, []);
 
