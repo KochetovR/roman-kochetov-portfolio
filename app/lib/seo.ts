@@ -5,6 +5,12 @@ import type { Locale } from "./locale";
 export const siteUrl = "https://roman-kochetov-portfolio.netlify.app";
 
 const siteName = "Roman Kochetov";
+const socialImage = {
+  url: "/thumbnail.webp",
+  width: 1731,
+  height: 909,
+  alt: "Roman Kochetov, Front-end Developer",
+};
 
 const homeSeo: Record<Locale, { description: string; keywords: string[]; locale: string; title: string }> = {
   en: {
@@ -64,11 +70,13 @@ function createMetadata(locale: Locale, path: string, title: string, description
       url: path,
       siteName,
       locale: homeSeo[locale].locale,
+      images: [socialImage],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
       description,
+      images: [socialImage.url],
     },
   };
 }
