@@ -103,7 +103,7 @@ export const translations: Record<Locale, Translation> = {
     },
     footer: { copyright: "© 2026 Roman Kochetov. All rights reserved.", eyebrow: "Get in touch", social: "You may also find me on these platforms!", subtitle: "What's next? Feel free to reach out if you're looking for a developer, have a query, or simply want to connect." },
     header: { downloadCv: "Download CV", home: "Roman Kochetov — home" },
-    hero: { availability: "Available for new projects", description: "I'm a front-end developer with 5 years of experience building responsive web applications and commercial products. I work with Vue.js, Nuxt, React, Next.js, TypeScript, and polished interfaces that perform well at every screen size.", greeting: "Hi, I'm Roman", location: "Odesa, Ukraine" },
+    hero: { availability: "Available for new projects", description: "Need a website for your business or a frontend for your web product? I build business websites, landing pages, customer portals and admin interfaces with React, Next.js, Vue and Nuxt. With 5 years of commercial experience, I can help you build a new interface or improve an existing one.", greeting: "Hi, I'm Roman", location: "Odesa, Ukraine" },
     navigation: { about: "About", contact: "Contact", main: "Main navigation", mobile: "Mobile navigation", work: "Work" },
     scrollToTop: "Scroll to top",
     skills: {
@@ -169,7 +169,7 @@ export const translations: Record<Locale, Translation> = {
     },
     footer: { copyright: "© 2026 Roman Kochetov. Усі права захищено.", eyebrow: "Зв'язатися", social: "Мене також можна знайти на цих платформах!", subtitle: "Що далі? Напишіть мені, якщо шукаєте розробника, маєте запитання або просто хочете поспілкуватися." },
     header: { downloadCv: "Завантажити CV", home: "Roman Kochetov — головна" },
-    hero: { availability: "Відкритий до нових проєктів", description: "Я front-end розробник із 5 роками досвіду створення адаптивних вебзастосунків і комерційних продуктів. Працюю з Vue.js, Nuxt, React, Next.js, TypeScript і створюю продумані інтерфейси, що добре працюють на кожному екрані.", greeting: "Привіт, я Роман", location: "Одеса, Україна" },
+    hero: { availability: "Відкритий до нових проєктів", description: "Потрібен сайт для бізнесу або frontend для вашого вебпродукту? Розробляю корпоративні сайти, лендинги, особисті кабінети й адміністративні інтерфейси на React, Next.js, Vue та Nuxt. Маю 5 років комерційного досвіду — допоможу створити новий інтерфейс або доопрацювати наявний.", greeting: "Привіт, я Роман", location: "Одеса, Україна" },
     navigation: { about: "Про мене", contact: "Контакти", main: "Основна навігація", mobile: "Мобільна навігація", work: "Роботи" },
     scrollToTop: "Нагору",
     skills: {
@@ -235,7 +235,7 @@ export const translations: Record<Locale, Translation> = {
     },
     footer: { copyright: "© 2026 Roman Kochetov. Все права защищены.", eyebrow: "Связаться", social: "Меня также можно найти на этих платформах!", subtitle: "Что дальше? Напишите мне, если ищете разработчика, у вас есть вопрос или вы просто хотите пообщаться." },
     header: { downloadCv: "Скачать CV", home: "Roman Kochetov — главная" },
-    hero: { availability: "Открыт к новым проектам", description: "Я front-end разработчик с 5 годами опыта создания адаптивных веб-приложений и коммерческих продуктов. Работаю с Vue.js, Nuxt, React, Next.js, TypeScript и создаю продуманные интерфейсы, которые хорошо работают на любом экране.", greeting: "Привет, я Роман", location: "Одесса, Украина" },
+    hero: { availability: "Открыт к новым проектам", description: "Нужен сайт для бизнеса или frontend для вашего веб-продукта? Разрабатываю корпоративные сайты, лендинги, личные кабинеты и административные интерфейсы на React, Next.js, Vue и Nuxt. У меня 5 лет коммерческого опыта — помогу создать новый интерфейс или доработать существующий.", greeting: "Привет, я Роман", location: "Одесса, Украина" },
     navigation: { about: "Обо мне", contact: "Контакты", main: "Основная навигация", mobile: "Мобильная навигация", work: "Работы" },
     scrollToTop: "Наверх",
     skills: {

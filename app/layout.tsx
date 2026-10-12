@@ -7,7 +7,7 @@ import { ScrollToTopButton } from "./components/scroll-to-top-button";
 import { SectionReveal } from "./components/section-reveal";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
-import { personJsonLd, siteUrl } from "./lib/seo";
+import { createHomeMetadata, personJsonLd, siteUrl } from "./lib/seo";
 import "./globals.css";
 
 const inter = localFont({
@@ -18,10 +18,12 @@ const inter = localFont({
   display: "swap",
 });
 
+const homeMetadata = createHomeMetadata("en");
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Roman Kochetov — Front-end Developer",
-  description: "Front-end developer building responsive web applications with Vue.js, Nuxt, React, Next.js, and TypeScript.",
+  title: homeMetadata.title,
+  description: homeMetadata.description,
   authors: [{ name: "Roman Kochetov", url: siteUrl }],
   creator: "Roman Kochetov",
   publisher: "Roman Kochetov",
