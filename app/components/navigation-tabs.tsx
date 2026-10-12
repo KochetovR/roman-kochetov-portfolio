@@ -7,7 +7,7 @@ import { getTranslation } from "../data/translations";
 import { getLocalizedPathname } from "../lib/locale";
 import { useLocale } from "./locale-provider";
 
-type NavigationTabId = "about" | "work" | "contact";
+type NavigationTabId = "services" | "about" | "work" | "contact";
 type NavigationTabVariant = "bottom" | "header";
 type ActiveNavigationTab = NavigationTabId | null;
 
@@ -23,6 +23,7 @@ export function NavigationTabs({ variant }: { variant: NavigationTabVariant }) {
   const locale = useLocale();
   const text = getTranslation(locale).navigation;
   const navigation = useMemo(() => [
+    { href: `${getLocalizedPathname(locale, "/")}#services`, id: "services" as const, label: text.services },
     { href: `${getLocalizedPathname(locale, "/")}#about`, id: "about" as const, label: text.about },
     { href: `${getLocalizedPathname(locale, "/")}#work`, id: "work" as const, label: text.work },
     { href: "#contact", id: "contact" as const, label: text.contact },
@@ -77,7 +78,7 @@ export function NavigationTabs({ variant }: { variant: NavigationTabVariant }) {
       }
 
       const activationLine = window.innerHeight * 0.4;
-      let nextActiveTab: NavigationTabId = "about";
+      let nextActiveTab: NavigationTabId = "services";
 
       for (const item of navigation) {
         const section = document.getElementById(item.id);
@@ -148,8 +149,8 @@ export function NavigationTabs({ variant }: { variant: NavigationTabVariant }) {
   const isHeader = variant === "header";
 
   return (
-    <nav aria-label={isHeader ? text.main : text.mobile} className={isHeader ? "" : "mobile-bottom-navigation fixed bottom-0 left-0 z-40 w-screen border-t border-border bg-page px-[var(--content-padding-inline)] py-3 min-[540px]:hidden"}>
-      <ul className={isHeader ? "flex items-center gap-2" : "mx-auto grid max-w-[var(--content-max-width)] grid-cols-3 gap-2"}>
+    <nav aria-label={isHeader ? text.main : text.mobile} className={isHeader ? "" : "mobile-bottom-navigation fixed bottom-0 left-0 z-40 w-screen border-t border-border bg-page px-[var(--content-padding-inline)] py-3 navigation:hidden"}>
+      <ul className={isHeader ? "flex items-center gap-2" : "mx-auto grid max-w-[var(--content-max-width)] grid-cols-4 gap-1"}>
         {navigation.map((item) => {
           const isActive = activeTab === item.id;
 

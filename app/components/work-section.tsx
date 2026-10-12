@@ -11,7 +11,7 @@ export function WorkSection({ locale }: { locale: Locale }) {
   return (
     <section
       aria-labelledby="work-title"
-      className="bg-page px-[var(--content-padding-inline)] py-[var(--section-padding-block)]"
+      className="bg-section px-[var(--content-padding-inline)] py-[var(--section-padding-block)]"
       id="work"
     >
       <div className="mx-auto max-w-[var(--content-max-width)]">

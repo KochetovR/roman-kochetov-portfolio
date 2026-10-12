@@ -16,6 +16,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
+  scrollbar-color: var(--text-primary) transparent;
 }
 
 html[data-hash-navigation-loading] .hash-navigation-preloader,
@@ -54,9 +55,9 @@ html[data-bottom-navigation-hidden] .mobile-bottom-navigation {
   transform: translateY(100%);
 }
 
-@media (max-width: 539px) {
+@variant max-navigation {
   body {
-    padding-bottom: 4.5rem;
+    padding-bottom: 65px;
   }
 }
 

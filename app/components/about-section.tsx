@@ -9,7 +9,7 @@ export function AboutSection({ locale }: { locale: Locale }) {
   return (
     <section
       aria-labelledby="about-title"
-      className="bg-section px-[var(--content-padding-inline)] py-[var(--section-padding-block)]"
+      className="bg-page px-[var(--content-padding-inline)] py-[var(--section-padding-block)]"
       id="about"
     >
       <div className="mx-auto max-w-[var(--content-max-width)]">

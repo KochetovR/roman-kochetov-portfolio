@@ -42,7 +42,7 @@ export function SiteFooter() {
   return (
     <footer>
       <section
-        className="mx-auto px-[var(--content-padding-inline)] py-[var(--section-padding-block)] text-center bg-section"
+        className="mx-auto px-[var(--content-padding-inline)] py-[var(--section-padding-block)] text-center bg-page"
         id="contact"
       >
         <span className="type-body-3 inline-flex rounded-xl bg-muted px-3 py-1 text-secondary type-body-2-medium">
@@ -95,7 +95,7 @@ export function SiteFooter() {
         </div>
       </section>
 
-      <div className="px-[var(--content-padding-inline)] py-5 text-center ">
+      <div className="bg-section px-[var(--content-padding-inline)] py-5 text-center">
         <p className="type-body-3 text-secondary">{text.copyright}</p>
       </div>
     </footer>

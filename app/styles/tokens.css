@@ -138,6 +138,11 @@
   }
 }
 
+/* Navigation switches at 767px (47.9375rem). Typography keeps its 768px tablet boundary. */
+@theme {
+  --breakpoint-navigation: 47.9375rem;
+}
+
 @theme inline {
   --color-page: var(--surface-page);
   --color-raised: var(--surface-raised);

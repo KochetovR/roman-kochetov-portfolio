@@ -31,7 +31,7 @@ export function ExperienceSection({ locale }: { locale: Locale }) {
   return (
     <section
       aria-labelledby="experience-title"
-      className="bg-section px-[var(--content-padding-inline)] py-[var(--section-padding-block)]"
+      className="bg-page px-[var(--content-padding-inline)] py-[var(--section-padding-block)]"
       id="experience"
     >
       <div className="mx-auto max-w-[var(--content-max-width)]">

@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: homeMetadata.title,
   description: homeMetadata.description,
+  verification: {
+    google: "tOdRSx0FlYagkUUA_yQ2GNJ2LhYmX8ZgW4FjjPayUgw",
+  },
   authors: [{ name: "Roman Kochetov", url: siteUrl }],
   creator: "Roman Kochetov",
   publisher: "Roman Kochetov",

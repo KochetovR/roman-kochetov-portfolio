@@ -3,6 +3,7 @@ import { ExperienceSection } from "./experience-section";
 import { HashScrollHandler } from "./hash-scroll-handler";
 import { HeroSection } from "./hero-section";
 import { SectionReveal } from "./section-reveal";
+import { ServicesSection } from "./services-section";
 import { SkillsSection } from "./skills-section";
 import { WorkSection } from "./work-section";
 import type { Locale } from "../lib/locale";
@@ -12,6 +13,7 @@ export function HomeMain({ locale }: { locale: Locale }) {
     <main className="flex-1">
       <HashScrollHandler />
       <HeroSection locale={locale} />
+      <SectionReveal><ServicesSection locale={locale} /></SectionReveal>
       <SectionReveal><AboutSection locale={locale} /></SectionReveal>
       <SectionReveal><SkillsSection locale={locale} /></SectionReveal>
       <SectionReveal><ExperienceSection locale={locale} /></SectionReveal>

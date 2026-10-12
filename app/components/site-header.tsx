@@ -23,7 +23,7 @@ export function SiteHeader() {
           &lt;RK /&gt;
         </Link>
 
-        <div className="hidden items-center gap-3 min-[540px]:flex">
+        <div className="hidden items-center gap-3 navigation:flex">
           <NavigationTabs variant="header" />
           <LanguageSwitcher />
           <ThemeToggle />
@@ -36,7 +36,7 @@ export function SiteHeader() {
           </a>
         </div>
 
-        <div className="flex items-center gap-2 min-[540px]:hidden">
+        <div className="flex items-center gap-2 navigation:hidden">
           <LanguageSwitcher />
           <ThemeToggle />
           <a

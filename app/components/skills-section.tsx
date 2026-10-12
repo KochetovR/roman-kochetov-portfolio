@@ -147,7 +147,7 @@ export function SkillsSection({ locale }: { locale: Locale }) {
   return (
     <section
       aria-labelledby="skills-title"
-      className="bg-page px-[var(--content-padding-inline)] py-[var(--section-padding-block)]"
+      className="bg-section px-[var(--content-padding-inline)] py-[var(--section-padding-block)]"
       id="skills"
     >
       <div className="mx-auto max-w-[var(--content-max-width)]">

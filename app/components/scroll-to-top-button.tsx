@@ -50,7 +50,7 @@ export function ScrollToTopButton() {
   return (
     <button
       aria-label={label}
-      className={`scroll-to-top-button fixed right-4 z-30 inline-flex size-11 items-center justify-center rounded-full bg-cv-button text-on-cv-button shadow-lg min-[540px]:bottom-6 cursor-pointer ${isVisible ? "is-visible" : ""} bottom-[5.5rem]`}
+      className={`scroll-to-top-button fixed right-4 z-30 inline-flex size-11 items-center justify-center rounded-full bg-cv-button text-on-cv-button shadow-lg navigation:bottom-6 cursor-pointer ${isVisible ? "is-visible" : ""} bottom-[5.5rem]`}
       onClick={scrollToTop}
       title={label}
       type="button"
