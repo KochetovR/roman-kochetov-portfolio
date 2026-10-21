@@ -1,5 +1,5 @@
-import { HomeMain } from "./components/home-main";
-import { createHomeMetadata } from "./lib/seo";
+import { HomeMain } from "../components/home-main";
+import { createHomeMetadata } from "../lib/seo";
 
 export const metadata = createHomeMetadata("en");
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { WorkDetail } from "../../components/work-detail";
-import { projects } from "../../data/projects";
-import { createCaseStudyMetadata } from "../../lib/seo";
+import { WorkDetail } from "../../../components/work-detail";
+import { projects } from "../../../data/projects";
+import { createCaseStudyMetadata } from "../../../lib/seo";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));

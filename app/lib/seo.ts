@@ -185,9 +185,9 @@ function getLocalizedPath(locale: Locale, path: string) {
   return path === "/" ? `/${locale}` : `/${locale}${path}`;
 }
 
-function getAlternates(path: string) {
+function getAlternates(locale: Locale, path: string) {
   return {
-    canonical: path,
+    canonical: getLocalizedPath(locale, path),
     languages: {
       en: getLocalizedPath("en", path),
       uk: getLocalizedPath("uk", path),
@@ -198,16 +198,18 @@ function getAlternates(path: string) {
 }
 
 function createMetadata(locale: Locale, path: string, title: string, description: string, keywords: string[], type: "article" | "website"): Metadata {
+  const localizedPath = getLocalizedPath(locale, path);
+
   return {
     title,
     description,
     keywords,
-    alternates: getAlternates(path),
+    alternates: getAlternates(locale, path),
     openGraph: {
       type,
       title,
       description,
-      url: path,
+      url: localizedPath,
       siteName,
       locale: homeSeo[locale].locale,
       images: [socialImage],
