@@ -47,6 +47,7 @@ export type Translation = {
     availability: string;
     description: string;
     greeting: string;
+    title: string;
     location: string;
   };
   navigation: {
@@ -104,7 +105,7 @@ export const translations: Record<Locale, Translation> = {
     },
     footer: { copyright: "© 2026 Roman Kochetov. All rights reserved.", eyebrow: "Get in touch", social: "You may also find me on these platforms!", subtitle: "What's next? Feel free to reach out if you're looking for a developer, have a query, or simply want to connect." },
     header: { downloadCv: "Download CV", home: "Roman Kochetov — home" },
-    hero: { availability: "Available for new projects", description: "Need a website for your business or a frontend for your web product? I build business websites, landing pages, customer portals and admin interfaces with React, Next.js, Vue and Nuxt. With 5 years of commercial experience, I can help you build a new interface or improve an existing one.", greeting: "Hi, I'm Roman", location: "Odesa, Ukraine" },
+    hero: { availability: "Available for new projects", description: "I build responsive business websites, landing pages and web application interfaces with React, Next.js, Vue, Nuxt and TypeScript. With 5 years of commercial experience, I can develop a new frontend or improve an existing product.", greeting: "Hi, I'm Roman", title: "Frontend Developer - React, Next.js, Vue & Nuxt", location: "Odesa, Ukraine" },
     navigation: { about: "About", contact: "Contact", main: "Main navigation", mobile: "Mobile navigation", services: "Services", work: "Work" },
     scrollToTop: "Scroll to top",
     skills: {
@@ -145,7 +146,7 @@ export const translations: Record<Locale, Translation> = {
       title: "The skills, tools, and technologies I work with.",
     },
     theme: { dark: "Dark theme", light: "Light theme", switchToDark: "Switch to dark theme", switchToLight: "Switch to light theme" },
-    work: { eyebrow: "Work", readCaseStudy: (title) => `Read the ${title} case study`, technologies: (title) => `${title} technologies`, title: "A selection of projects I've built and helped bring to life.", viewCaseStudy: "View case study", visitWebsite: "Visit website" },
+    work: { eyebrow: "Work", readCaseStudy: (title) => `Read the ${title} case study`, technologies: (title) => `${title} technologies`, title: "Selected frontend projects built with React, Next.js, Vue and Nuxt.", viewCaseStudy: "View case study", visitWebsite: "Visit website" },
   },
   uk: {
     about: {
@@ -170,7 +171,7 @@ export const translations: Record<Locale, Translation> = {
     },
     footer: { copyright: "© 2026 Roman Kochetov. Усі права захищено.", eyebrow: "Зв'язатися", social: "Мене також можна знайти на цих платформах!", subtitle: "Що далі? Напишіть мені, якщо шукаєте розробника, маєте запитання або просто хочете поспілкуватися." },
     header: { downloadCv: "Завантажити CV", home: "Roman Kochetov — головна" },
-    hero: { availability: "Відкритий до нових проєктів", description: "Потрібен сайт для бізнесу або frontend для вашого вебпродукту? Розробляю корпоративні сайти, лендинги, особисті кабінети й адміністративні інтерфейси на React, Next.js, Vue та Nuxt. Маю 5 років комерційного досвіду — допоможу створити новий інтерфейс або доопрацювати наявний.", greeting: "Привіт, я Роман", location: "Одеса, Україна" },
+    hero: { availability: "Відкритий до нових проєктів", description: "Розробляю адаптивні сайти для бізнесу, лендинги та інтерфейси вебзастосунків на React, Next.js, Vue, Nuxt і TypeScript. Маю 5 років комерційного досвіду та можу створити новий frontend або доопрацювати наявний продукт.", greeting: "Привіт, я Роман", title: "Frontend розробник - React, Next.js, Vue та Nuxt", location: "Одеса, Україна" },
     navigation: { about: "Про мене", contact: "Контакти", main: "Основна навігація", mobile: "Мобільна навігація", services: "Послуги", work: "Роботи" },
     scrollToTop: "Нагору",
     skills: {
@@ -211,7 +212,7 @@ export const translations: Record<Locale, Translation> = {
       title: "Навички, інструменти й технології, з якими я працюю.",
     },
     theme: { dark: "Темна тема", light: "Світла тема", switchToDark: "Увімкнути темну тему", switchToLight: "Увімкнути світлу тему" },
-    work: { eyebrow: "Роботи", readCaseStudy: (title) => `Переглянути опис проєкту ${title}`, technologies: (title) => `Технології ${title}`, title: "Добірка проєктів, які я створив або допоміг втілити.", viewCaseStudy: "Переглянути опис", visitWebsite: "Відвідати сайт" },
+    work: { eyebrow: "Роботи", readCaseStudy: (title) => `Переглянути опис проєкту ${title}`, technologies: (title) => `Технології ${title}`, title: "Вибрані frontend-проєкти на React, Next.js, Vue та Nuxt.", viewCaseStudy: "Переглянути опис", visitWebsite: "Відвідати сайт" },
   },
   ru: {
     about: {
@@ -236,7 +237,7 @@ export const translations: Record<Locale, Translation> = {
     },
     footer: { copyright: "© 2026 Roman Kochetov. Все права защищены.", eyebrow: "Связаться", social: "Меня также можно найти на этих платформах!", subtitle: "Что дальше? Напишите мне, если ищете разработчика, у вас есть вопрос или вы просто хотите пообщаться." },
     header: { downloadCv: "Скачать CV", home: "Roman Kochetov — главная" },
-    hero: { availability: "Открыт к новым проектам", description: "Нужен сайт для бизнеса или frontend для вашего веб-продукта? Разрабатываю корпоративные сайты, лендинги, личные кабинеты и административные интерфейсы на React, Next.js, Vue и Nuxt. У меня 5 лет коммерческого опыта — помогу создать новый интерфейс или доработать существующий.", greeting: "Привет, я Роман", location: "Одесса, Украина" },
+    hero: { availability: "Открыт к новым проектам", description: "Разрабатываю адаптивные сайты для бизнеса, лендинги и интерфейсы веб-приложений на React, Next.js, Vue, Nuxt и TypeScript. У меня 5 лет коммерческого опыта — могу создать новый frontend или доработать существующий продукт.", greeting: "Привет, я Роман", title: "Frontend-разработчик - React, Next.js, Vue и Nuxt", location: "Одесса, Украина" },
     navigation: { about: "Обо мне", contact: "Контакты", main: "Основная навигация", mobile: "Мобильная навигация", services: "Услуги", work: "Работы" },
     scrollToTop: "Наверх",
     skills: {
@@ -277,7 +278,7 @@ export const translations: Record<Locale, Translation> = {
       title: "Навыки, инструменты и технологии, с которыми я работаю.",
     },
     theme: { dark: "Тёмная тема", light: "Светлая тема", switchToDark: "Включить тёмную тему", switchToLight: "Включить светлую тему" },
-    work: { eyebrow: "Работы", readCaseStudy: (title) => `Открыть описание проекта ${title}`, technologies: (title) => `Технологии ${title}`, title: "Подборка проектов, которые я создал или помог воплотить.", viewCaseStudy: "Открыть описание", visitWebsite: "Открыть сайт" },
+    work: { eyebrow: "Работы", readCaseStudy: (title) => `Открыть описание проекта ${title}`, technologies: (title) => `Технологии ${title}`, title: "Избранные frontend-проекты на React, Next.js, Vue и Nuxt.", viewCaseStudy: "Открыть описание", visitWebsite: "Открыть сайт" },
   },
 };
 

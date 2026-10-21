@@ -16,7 +16,8 @@ export function HeroSection({ locale }: { locale: Locale }) {
     <section aria-labelledby="hero-title" className="bg-page px-[var(--content-padding-inline)] py-12 md:py-20 lg:py-24">
       <div className="mx-auto flex max-w-[var(--content-max-width)] flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-16">
         <div className="order-2 max-w-2xl md:order-1">
-          <h1 className="type-h1 text-primary" id="hero-title">{text.greeting} <span aria-hidden="true">👋</span></h1>
+          <p className="type-h1 text-primary">{text.greeting} <span aria-hidden="true">👋</span></p>
+          <h1 className="mt-2 max-w-2xl text-[clamp(1.5rem,4vw,2.25rem)] leading-tight font-semibold tracking-tight text-primary" id="hero-title">{text.title}</h1>
           <p className="type-body-1 mt-3 text-secondary">{text.description}</p>
           <div className="mt-6 space-y-2 text-secondary">
             <p className="type-body-2 flex items-center gap-2"><svg aria-hidden="true" className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" /><circle cx="12" cy="10" r="2.5" stroke="currentColor" strokeWidth="1.75" /></svg>{text.location}</p>
